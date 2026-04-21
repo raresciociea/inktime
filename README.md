@@ -6,7 +6,7 @@
 
 ## Block Diagram
 
-```
+```text
                           ┌─────────────────────────────────────────────┐
                           │              nRF52840 (U$1)                  │
                           │                                              │
@@ -42,31 +42,31 @@
 
 ## Bill of Materials (BOM)
 
-| Ref | Qty | Component | Description | Package | JLCPCB / Procurement | Datasheet |
-|-----|-----|-----------|-------------|---------|----------------------|-----------|
-| U$1 | 1 | nRF52840-QIAA | Main MCU — BLE 5.0 + ARM Cortex-M4F | AQFN-73 (7×7mm) | [JLCPCB](https://jlcpcb.com/partdetail/NordicSemiconductor-nRF52840_QIAA/C190794) | [Datasheet](https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.5.pdf) |
-| IC1 | 1 | BQ25180YBGR | 1-cell LiPo charger, I2C, 1A | 8-DSBGA (1.6×1.1mm) | [Mouser](https://www.mouser.co.uk/ProductDetail/Texas-Instruments/BQ25180YBGR) | [Datasheet](https://www.ti.com/lit/ds/symlink/bq25180.pdf) |
-| IC2 | 1 | BMA423 | Triaxial accelerometer + step counter, I2C/SPI | LGA-12 (2×2mm) | [Mouser](https://www.mouser.co.uk/ProductDetail/Bosch-Sensortec/BMA423) | [Datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bma423-ds000.pdf) |
-| IC3 | 1 | DRV2605YZFR | Haptic driver for ERM/LRA motors, I2C | 9-BGA (1.44×1.44mm) | [Arrow](https://www.arrow.com/en/products/drv2605yzfr/texas-instruments) | [Datasheet](https://www.ti.com/lit/ds/symlink/drv2605.pdf) |
-| U1 | 1 | MAX17048G+T10 | 1-cell fuel gauge, ModelGauge, I2C | TDFN-8 (2×2mm) | [SnapEDA/Mouser](https://www.snapeda.com/parts/MAX17048G+T10/Analog+Devices/view-part/) | [Datasheet](https://datasheets.maximintegrated.com/en/ds/MAX17048-MAX17049.pdf) |
-| IC9 | 1 | RT6160AWSC | Buck-boost DC/DC regulator, I2C | 15-WL-CSP (1.4×2.3mm) | [Mouser](https://www.mouser.co.uk/ProductDetail/Richtek/RT6160AWSC) | [Datasheet](https://www.richtek.com/assets/product_file/RT6160A/DS6160A-00.pdf) |
-| ANT1 | 1 | 2450AT18B100E | 2.45 GHz chip antenna | 3216 SMD | [Mouser](https://www.mouser.co.uk/ProductDetail/Johanson-Technology/2450AT18B100E) | [Datasheet](https://www.johansontechnology.com/datasheets/2450AT18B100E.pdf) |
-| J2 | 1 | Molex 503480-2400 | 0.5mm FPC connector, 24-pin, right-angle | SMD | [Mouser](https://www.mouser.co.uk/ProductDetail/Molex/503480-2400) | [Datasheet](https://www.molex.com/en-us/products/part-detail/5034802400) |
-| J3 | 1 | KH-TYPE-C-16P | USB-C 16-pin receptacle | SMD | [JLCPCB](https://jlcpcb.com/partdetail/Kinghelm-KH_TYPE_C_16P/C2765186) | [Datasheet](https://www.kinghelm.net/product/kh-type-c-16p.html) |
-| J1 | 1 | TC2030-IDC | Tag-Connect 6-pin SWD debug connector | PTH | [Tag-Connect](https://www.tag-connect.com/product/tc2030-idc) | [Datasheet](https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-IDC_1.pdf) |
-| X1 | 1 | 32 MHz Crystal | Main RF crystal | 2016 SMD | JLCPCB parts | Nordic ref design |
-| X2 | 1 | 32.768 kHz Crystal | RTC crystal | 3215 SMD | JLCPCB parts | Nordic ref design |
-| L1 | 1 | Wurth 744043680 (68 µH) | EPD boost inductor | 4828 SMD | [JLCPCB](https://jlcpcb.com/partdetail/WurthElektronik-744043680/C408334) | [Datasheet](https://www.we-online.com/catalog/datasheet/744043680.pdf) |
-| L2 | 1 | 10 µH inductor | DC-DC inductor for nRF DCC pin | 0201 | JLCPCB parts | — |
-| L3 | 1 | 15 nH inductor | RF impedance matching network | 0201 | JLCPCB parts | — |
-| L7 | 1 | FTC252012SR47MBCA (0.47 µH) | Buck-boost inductor | 2016 SMD | [JLCPCB](https://jlcpcb.com/partdetail/6763488-FTC252012SR47MBCA/C5832368) | [Datasheet](https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=FTC252012SR47MBCA) |
-| D1 | 1 | USBLC6-2SC6Y | USB ESD protection TVS diode array | SOT-23-6 | JLCPCB parts | [Datasheet](https://www.st.com/resource/en/datasheet/usblc6-2sc6y.pdf) |
-| D2, D4, D5 | 3 | MBR0530 | Schottky diode 30V/0.5A | SOD-123 | JLCPCB parts | [Datasheet](https://www.onsemi.com/pdf/datasheet/mbr0530t1-d.pdf) |
-| Q1 | 1 | P-channel MOSFET | EPD 3.3V power switch | SOT-23 | JLCPCB parts | — |
-| Q3 | 1 | SI1308EDL-T1-GE3 | N-channel MOSFET 30V/1.5A, EPD gate driver | SC-70 | JLCPCB parts | [Datasheet](https://www.vishay.com/docs/63401/si1308edl.pdf) |
-| SW_UP, SW_ENT, SW_DN | 3 | EVP-AKE31A | Tactile push button, SMD | SMD | JLCPCB parts | [Datasheet](https://industrial.panasonic.com/ww/products/pt/light-touch-switches/models/EVPAKE31A) |
-| R1–R18, various | ~20 | Resistors | Various values (10K, 5K1, 3K3, 7.68K, 2.2Ω, 0.47Ω) | 0201 | JLCPCB parts | — |
-| C1–C43, EPD_Cx | ~60 | Capacitors | 1pF – 22µF decoupling/filtering | 0201 (≤100nF), 0402 (>100nF) | JLCPCB parts | — |
+| Ref | Qty | Component | Description | Package | JLC Parts Link | Datasheet |
+|-----|-----|-----------|-------------|---------|----------------|-----------|
+| U$1 | 1 | nRF52840-QIAA | Main MCU — BLE 5.0 + ARM Cortex-M4F | AQFN-73 (7×7mm) | [JLC C190794](https://jlcpcb.com/partdetail/NordicSemiconductor-nRF52840_QIAA/C190794) | [Datasheet](https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.5.pdf) |
+| IC1 | 1 | BQ25180YBGR | 1-cell LiPo charger, I2C, 1A | 8-DSBGA (1.6×1.1mm) | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=BQ25180) | [Datasheet](https://www.ti.com/lit/ds/symlink/bq25180.pdf) |
+| IC2 | 1 | BMA423 | Triaxial accelerometer + step counter, I2C/SPI | LGA-12 (2×2mm) | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=BMA423) | [Datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bma423-ds000.pdf) |
+| IC3 | 1 | DRV2605YZFR | Haptic driver for ERM/LRA motors, I2C | 9-BGA (1.44×1.44mm) | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=DRV2605YZFR) | [Datasheet](https://www.ti.com/lit/ds/symlink/drv2605.pdf) |
+| U1 | 1 | MAX17048G+T10 | 1-cell fuel gauge, ModelGauge, I2C | TDFN-8 (2×2mm) | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=MAX17048G) | [Datasheet](https://datasheets.maximintegrated.com/en/ds/MAX17048-MAX17049.pdf) |
+| IC9 | 1 | RT6160AWSC | Buck-boost DC/DC regulator, I2C | 15-WL-CSP (1.4×2.3mm) | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=RT6160AWSC) | [Datasheet](https://www.richtek.com/assets/product_file/RT6160A/DS6160A-00.pdf) |
+| ANT1 | 1 | 2450AT18B100E | 2.45 GHz chip antenna | 3216 SMD | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=2450AT18B100E) | [Datasheet](https://www.johansontechnology.com/datasheets/2450AT18B100E.pdf) |
+| J2 | 1 | Molex 503480-2400 | 0.5mm FPC connector, 24-pin, right-angle | SMD | [JLC Parts Search](https://jlcpcb.com/parts/componentSearch?searchTxt=503480-2400) | [Datasheet](https://www.molex.com/en-us/products/part-detail/5034802400) |
+| J3 | 1 | KH-TYPE-C-16P | USB-C 16-pin receptacle | SMD | [JLC C2765186](https://jlcpcb.com/partdetail/Kinghelm-KH_TYPE_C_16P/C2765186) | [Datasheet](https://www.kinghelm.net/product/kh-type-c-16p.html) |
+| J1 | 1 | TC2030-IDC | Tag-Connect 6-pin SWD debug connector | PTH | [Tag-Connect (External)](https://www.tag-connect.com/product/tc2030-idc) | [Datasheet](https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-IDC_1.pdf) |
+| X1 | 1 | 32 MHz Crystal | Main RF crystal | 2016 SMD | JLC Parts | Nordic ref design |
+| X2 | 1 | 32.768 kHz Crystal | RTC crystal | 3215 SMD | JLC Parts | Nordic ref design |
+| L1 | 1 | Wurth 744043680 (68 µH) | EPD boost inductor | 4828 SMD | [JLC C408334](https://jlcpcb.com/partdetail/WurthElektronik-744043680/C408334) | [Datasheet](https://www.we-online.com/catalog/datasheet/744043680.pdf) |
+| L2 | 1 | 10 µH inductor | DC-DC inductor for nRF DCC pin | 0201 | JLC Parts | — |
+| L3 | 1 | 15 nH inductor | RF impedance matching network | 0201 | JLC Parts | — |
+| L7 | 1 | FTC252012SR47MBCA (0.47 µH) | Buck-boost inductor | 2016 SMD | [JLC C5832368](https://jlcpcb.com/partdetail/6763488-FTC252012SR47MBCA/C5832368) | [Datasheet](https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=FTC252012SR47MBCA) |
+| D1 | 1 | USBLC6-2SC6Y | USB ESD protection TVS diode array | SOT-23-6 | JLC Parts | [Datasheet](https://www.st.com/resource/en/datasheet/usblc6-2sc6y.pdf) |
+| D2, D4, D5 | 3 | MBR0530 | Schottky diode 30V/0.5A | SOD-123 | JLC Parts | [Datasheet](https://www.onsemi.com/pdf/datasheet/mbr0530t1-d.pdf) |
+| Q1 | 1 | P-channel MOSFET | EPD 3.3V power switch | SOT-23 | JLC Parts | — |
+| Q3 | 1 | SI1308EDL-T1-GE3 | N-channel MOSFET 30V/1.5A, EPD gate driver | SC-70 | JLC Parts | [Datasheet](https://www.vishay.com/docs/63401/si1308edl.pdf) |
+| SW_UP, SW_ENT, SW_DN | 3 | EVP-AKE31A | Tactile push button, SMD | SMD | JLC Parts | [Datasheet](https://industrial.panasonic.com/ww/products/pt/light-touch-switches/models/EVPAKE31A) |
+| R1–R18, various | ~20 | Resistors | Various values (10K, 5K1, 3K3, 7.68K, 2.2Ω, 0.47Ω) | 0201 | JLC Parts | — |
+| C1–C43, EPD_Cx | ~60 | Capacitors | 1pF – 22µF decoupling/filtering | 0201 (≤100nF), 0402 (>100nF) | JLC Parts | — |
 | TP_* | 14 | Test pads | GND, 3V3, VBAT, SDA, SCL, SWDIO, SWDCLK, SWO, RESET, etc. | TP20R | — | — |
 | SJ1 | 1 | Solder jumper | Configuration jumper | — | — | — |
 
@@ -75,7 +75,6 @@
 ## Hardware Functionality
 
 ### Microcontroller — nRF52840
-
 The nRF52840 is an ARM Cortex-M4F SoC from Nordic Semiconductor operating at 64 MHz with 1 MB Flash and 256 KB RAM. It integrates a Bluetooth 5.0 radio (BLE + 802.15.4), hardware AES/ECB/CCM/AAR, and a USB 2.0 full-speed controller.
 
 Two crystals are required:
@@ -87,7 +86,6 @@ The DCC pin is filtered with a 10 µH inductor (L2) and decoupling capacitors as
 ---
 
 ### E-Paper Display — SPI
-
 The e-paper display connects via a **24-pin 0.5 mm FPC** connector (J2, Molex 503480-2400). It is driven over **SPI** with additional GPIO control lines.
 
 The display power rail (EPD_3V3) is generated by a boost converter built around inductor L1 (68 µH) and switched by Q1 (P-channel MOSFET), controlled by the nRF pin P1.01. The EPD gate driver circuit uses Q3 (SI1308EDL N-MOSFET) and Schottky diodes D2/D4/D5 (MBR0530) to generate the positive/negative gate voltages required by the e-paper panel.
@@ -99,7 +97,6 @@ A capacitor bank (EPD_C1 through EPD_C12, all 1 µF/50 V, 0402) buffers the gate
 ---
 
 ### Battery Charger — BQ25180YBGR (IC1)
-
 The BQ25180 is a compact single-cell Li-Ion/LiPo charger from Texas Instruments in an 8-pin DSBGA package. It is configured and monitored over **I2C**.
 
 Key features used:
@@ -113,13 +110,11 @@ Decoupling: C24 (10 µF) and C23 (100 nF) on VREG; C39 (10 µF) on the SYS outpu
 ---
 
 ### Fuel Gauge — MAX17048G+T10 (U1)
-
 The MAX17048 is a 1-cell ModelGauge fuel gauge communicating over **I2C** (shared bus with BQ25180 and DRV2605). It directly measures battery voltage and estimates state-of-charge without a sense resistor. VBAT connects directly to the CELL pin.
 
 ---
 
 ### Buck-Boost Regulator — RT6160AWSC (IC9)
-
 The RT6160A is a 15-pin WL-CSP I2C-programmable buck-boost DC/DC converter that generates a stable 3.3 V output (3V3 rail) from the variable battery voltage (3.0–4.2 V). It uses inductor L7 (0.47 µH). Input decoupling: C25 (22 µF) + C33 (22 µF). Output decoupling: C21 (4.7 µF) + C20 (4.7 µF).
 
 The regulator is enabled by the BQ25180 SYS pin (VREG net) and configured over the shared I2C bus.
@@ -127,7 +122,6 @@ The regulator is enabled by the BQ25180 SYS pin (VREG net) and configured over t
 ---
 
 ### Accelerometer / IMU — BMA423 (IC2)
-
 The BMA423 is a Bosch 12-bit 3-axis accelerometer in a 2×2 mm LGA package with an integrated step counter, tilt, and activity recognition engine.
 
 It communicates over **I2C** (CSB tied to VDD to select I2C mode). Two interrupt outputs (INT1 → P0.08, INT2 → P1.08) allow the nRF to wake from sleep on motion events. SDO pin sets the I2C address (pulled to GND via R3 → address 0x18).
@@ -137,13 +131,11 @@ Decoupling: C37 (1 µF) on VDDIO; C38 (1 µF) on VDD.
 ---
 
 ### Haptic Driver — DRV2605YZFR (IC3)
-
 The DRV2605 drives an ERM or LRA vibration motor and includes an internal waveform library. It is controlled over **I2C** with an additional enable line (HAPTIC_EN → P0.12). The motor output pins are broken out to test pads TP_OP and TP_ON for debugging. A 100 nF decoupling capacitor (C34) is placed on VDD.
 
 ---
 
 ### USB Interface — USB-C (J3) + ESD (D1)
-
 The USB-C connector (KH-TYPE-C-16P) carries VBUS for charging and USB D+/D- for the nRF's built-in USB 2.0 FS peripheral. CC1 and CC2 lines have 5.1 kΩ pull-down resistors (R1_USB, R2_USB) to signal a default USB power sink.
 
 ESD protection is provided by USBLC6-2SC6Y (D1) on D+/D−. Bulk decoupling on VBUS: C42 (1500 pF) + C43 (1500 pF).
@@ -151,19 +143,16 @@ ESD protection is provided by USBLC6-2SC6Y (D1) on D+/D−. Bulk decoupling on V
 ---
 
 ### Debug Interface — TC2030-IDC (J1)
-
 A Tag-Connect TC2030-IDC footprint provides SWD (SWDIO, SWDCLK) + SWO + RESET access without needing a permanent through-hole connector. All signals are also available on labeled test pads.
 
 ---
 
 ### Push Buttons
-
 Three Panasonic EVP-AKE31A tactile SMD buttons (SW_UP, SW_ENT, SW_DN) are connected with RC debounce filters (10 kΩ pull-up + 1 µF capacitor on each signal line).
 
 ---
 
 ### RF Section — 2.4 GHz Antenna
-
 The Johanson 2450AT18B100E chip antenna is placed at the board edge with a PCB cutout underneath (no copper, no routing under the antenna area). The matching network consists of L3 (15 nH series) and shunt components (C3: 1 pF, C4: 1 pF, C9: 820 pF, C11: 100 pF) per the Nordic nRF52840 reference design for a chip antenna.
 
 ---
@@ -261,18 +250,18 @@ All test pads are clearly marked in the silkscreen layer with the signal name:
 
 ## Repository Structure
 
-```
+```text
 InkTime/
 ├── Hardware/
-│   ├── InkTime.sch          # Eagle schematic
-│   └── InkTime.brd          # Eagle board file
+│   ├── InkTime.sch           # Eagle schematic
+│   └── InkTime.brd           # Eagle board file
 ├── Manufacturing/
 │   ├── Gerbers.zip           # Gerber + drill files
 │   ├── InkTime_BOM.bom       # Bill of Materials
 │   └── Inktime_PnP.cpl       # Pick & Place file
 ├── Mechanical/
-│   ├── InkTime.f3z           # Fusion 360 full assembly
-│   └── InkTime_Exploded.f3z  # Fusion 360 exploded view
+│   ├── InkTime.stp           # 3D CAD full assembly
+│   └── InkTime_Exploded.stp  # 3D CAD exploded view
 ├── Images/
 │   └── (PCB renders, 3D renders)
 ├── LICENSE
