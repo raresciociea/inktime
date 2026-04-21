@@ -254,7 +254,8 @@ All test pads are clearly marked in the silkscreen layer with the signal name:
 InkTime/
 ├── Hardware/
 │   ├── InkTime.sch           # Eagle schematic
-│   └── InkTime.brd           # Eagle board file
+│   ├── InkTime.brd           # Eagle board file
+│   └── InkTime.pdf           # Exported schematic pdf
 ├── Manufacturing/
 │   ├── Gerbers.zip           # Gerber + drill files
 │   ├── InkTime_BOM.bom       # Bill of Materials
